@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
 function WebcamFeed() {
-  const API_URL = import.meta.env.API_URL;
+  const API_URL = import.meta.env.BACKEND_URL;
   const webcamRef = useRef(null);
   const [hindiText, setHindiText] = useState("");
   const [isDetecting, setIsDetecting] = useState(false);
