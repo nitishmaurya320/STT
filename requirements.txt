@@ -1,0 +1,9 @@
+Flask
+flask-cors
+gunicorn
+opencv-python-headless
+numpy
+mediapipe
+scikit-learn
+joblib
+googletrans
