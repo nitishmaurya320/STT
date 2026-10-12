@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
 function WebcamFeed() {
+  const API_URL = import.meta.env.API_URL;
   const webcamRef = useRef(null);
   const [hindiText, setHindiText] = useState("");
   const [isDetecting, setIsDetecting] = useState(false);
@@ -47,7 +48,7 @@ function WebcamFeed() {
     formData.append("image", blob, "frame.jpg");
     try {
       setLoading(true);
-      const res = await axios.post("http://127.0.0.1:5000/predict", formData);
+      const res = await axios.post(`${API_URL}/predict`, formData);
       const currentLetter = res.data.text;
       setPrediction(currentLetter);
       setConfidence((res.data.confidence * 100).toFixed(1));
@@ -122,7 +123,7 @@ function WebcamFeed() {
 
     const timer = setTimeout(async () => {
       try {
-        const res = await axios.post("http://127.0.0.1:5000/translate", {
+        const res = await axios.post(`${API_URL}/translate`, {
           text: sentence,
         });
 

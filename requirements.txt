@@ -2,8 +2,8 @@ Flask
 flask-cors
 gunicorn
 opencv-python-headless
-numpy
-mediapipe
-scikit-learn
+numpy==1.26.4
+mediapipe==0.10.21
+scikit-learn==1.7.1
 joblib
 googletrans
